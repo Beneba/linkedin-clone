@@ -1,25 +1,21 @@
-import React, { Component } from "react";
-import { Card, Button, FormControl } from "react-bootstrap";
+import React from "react";
+import './Post.css';
+import { Card, Button } from "react-bootstrap";
 
+const Post = (props) => {
+  return (
+    <div className = "Post-Item">
+      <Card>
+        <Card.Body>
+          <Card.Title></Card.Title>
 
-class Post extends Component {
-  render() {
-    return (
-      <div>
-        <Card >
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="outline-info">Dark</Button>
-            <Button variant="outline-danger">Dark</Button>
-          </Card.Body>
-        </Card>
-      </div>
-    );
-  }
-}
+          <Card.Text>{props.postInfo.updates}</Card.Text>
+          <Button variant="outline-info">Edit</Button>
+          <Button variant="outline-danger">Delete</Button>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
+
 export default Post;
