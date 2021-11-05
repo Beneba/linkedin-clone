@@ -1,12 +1,16 @@
 import React from 'react';
-import EditPost from '../EditPost/EditPost';
 import Post from '../Post/Post';
 
-function AllPost() {
+const AllPost = (props) => {
     return (
         <div>
-            <Post />
-            <EditPost />
+            {
+                 props.postsData.map((post, index) =>{
+                     return ( 
+                        <Post  postInfo ={post} key={index } />
+                     );  
+                 }) 
+            }  
         </div>
     )
 }
